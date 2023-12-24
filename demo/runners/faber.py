@@ -89,9 +89,9 @@ class FaberAgent(AriesAgent):
         if aip == 10:
             # define attributes to send for credential
             self.cred_attrs[cred_def_id] = {
-                "name": "Alice Smith",
-                "date": "2018-05-28",
-                "degree": "Maths",
+                "name": "Jose Del Valle",
+                "date": "2023-12-23",
+                "degree": "High School",
                 "birthdate_dateint": birth_date.strftime(birth_date_format),
                 "timestamp": str(int(time.time())),
             }
@@ -116,9 +116,9 @@ class FaberAgent(AriesAgent):
         elif aip == 20:
             if cred_type == CRED_FORMAT_INDY:
                 self.cred_attrs[cred_def_id] = {
-                    "name": "Alice Smith",
-                    "date": "2018-05-28",
-                    "degree": "Maths",
+                    "name": "Jose Del Valle",
+                    "date": "2023-12-23",
+                    "degree": "High School",
                     "birthdate_dateint": birth_date.strftime(birth_date_format),
                     "timestamp": str(int(time.time())),
                 }
@@ -160,11 +160,11 @@ class FaberAgent(AriesAgent):
                                 "issuanceDate": "2020-01-01T12:00:00Z",
                                 "credentialSubject": {
                                     "type": ["PermanentResident"],
-                                    "givenName": "ALICE",
-                                    "familyName": "SMITH",
-                                    "gender": "Female",
-                                    "birthCountry": "Bahamas",
-                                    "birthDate": "1958-07-17",
+                                    "givenName": "JOSE",
+                                    "familyName": "DEL VALLE",
+                                    "gender": "Male",
+                                    "birthCountry": "Spain",
+                                    "birthDate": "1968-03-12",
                                 },
                             },
                             "options": {"proofType": SIG_TYPE_BLS},
