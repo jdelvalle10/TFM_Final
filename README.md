@@ -16,6 +16,6 @@ En PoA, la validación de bloques y la generación de nuevos bloques no dependen
 
 ## Credit
 
-La implementacion inicial ACA-Py fue desarrolada por rl Gobierno de Columbia Britanica y el Trust Team en Canada.
+La implementacion inicial ACA-Py fue desarrolada por el Gobierno de Columbia Britanica y el Trust Team en Canada.
 
 
