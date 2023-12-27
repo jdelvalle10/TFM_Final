@@ -1,42 +1,7 @@
-# Hyperledger Aries Cloud Agent - Python  <!-- omit in toc -->
+# Caso de uso de Hyperledger Aries y VON Networks para la Credenciales Educactivas <!-- omit in toc -->
 
-[![pypi releases](https://img.shields.io/pypi/v/aries_cloudagent)](https://pypi.org/project/aries-cloudagent/)
-[![codecov](https://codecov.io/gh/hyperledger/aries-cloudagent-python/branch/main/graph/badge.svg)](https://codecov.io/gh/hyperledger/aries-cloudagent-python)
-
-<!-- ![logo](/doc/assets/aries-cloudagent-python-logo-bw.png) -->
-
-> An easy to use Aries agent for building SSI services using any language that supports sending/receiving HTTP requests.
-
-Full access to an organized set of all of the ACA-Py documents is available at [https://aca-py.org](https://aca-py.org).
-Check it out! It's much easier to navigate than finding all the documentation here.
-
-## Overview
-
-Hyperledger Aries Cloud Agent Python (ACA-Py) is a foundation for building Verifiable Credential (VC) ecosystems. It operates in the second and third layers of the [Trust Over IP framework (PDF)](https://trustoverip.org/wp-content/uploads/2020/05/toip_050520_primer.pdf) using [DIDComm messaging](https://github.com/hyperledger/aries-rfcs/tree/main/concepts/0005-didcomm) and [Hyperledger Aries](https://www.hyperledger.org/use/aries) protocols. The "cloud" in the name means that ACA-Py runs on servers (cloud, enterprise, IoT devices, and so forth), and is not designed to run on mobile devices.
-
-ACA-Py is built on the Aries concepts and features that make up [Aries Interop Profile (AIP) 1.0](https://github.com/hyperledger/aries-rfcs/tree/main/concepts/0302-aries-interop-profile#aries-interop-profile-version-10), and most of the features in [AIP 2.0](https://github.com/hyperledger/aries-rfcs/tree/main/concepts/0302-aries-interop-profile#aries-interop-profile-version-20). [ACA-Py’s supported Aries protocols](https://github.com/hyperledger/aries-cloudagent-python/blob/main/SupportedRFCs.md) include, most importantly, protocols for issuing, verifying, and holding verifiable credentials using both [Hyperledger AnonCreds](https://www.hyperledger.org/use/anoncreds) verifiable credential format, and the [W3C Standard Verifiable Credential](https://www.w3.org/TR/vc-data-model/) format using JSON-LD with LD-Signatures and BBS+ Signatures.
-
-To use ACA-Py you create a business logic controller that "talks to" ACA-Py (sending HTTP requests and receiving webhook notifications), and ACA-Py handles the Aries and DIDComm functionality. That controller can be built in any language that supports making and receiving HTTP requests; knowledge of Python is not needed. Together, this means you can focus on building VC solutions using familiar web development technologies, instead of having to learn the nuts and bolts of low-level cryptography and Trust over IP-type Aries protocols.
-
-This [checklist-style overview document](./SupportedRFCs.md) provides a full list of the features in ACA-Py.
-The following is a list of some of the core features needed for a production deployment, with a link to detailed information about the capability.
-
-### Multi-Tenant
-
-ACA-Py supports "multi-tenant" scenarios. In these scenarios, one (scalable) instance of ACA-Py uses one database instance, and are together capable of managing separate secure storage (for private keys, DIDs, credentials, etc.) for many different actors. This enables (for example) an "issuer-as-a-service", where an enterprise may have many VC issuers, each with different identifiers, using the same instance of ACA-Py to interact with VC holders as required. Likewise, an ACA-Py instance could be a "cloud wallet" for many holders (e.g. people or organizations) that, for whatever reason, cannot use a mobile device for a wallet. Learn more about multi-tenant deployments [here](./Multitenancy.md).
-
-### Mediator Service
-
-Startup options allow the use of an ACA-Py as an Aries [mediator](https://github.com/hyperledger/aries-rfcs/tree/main/concepts/0046-mediators-and-relays#summary) using core Aries protocols to coordinate its mediation role. Such an ACA-Py instance receives, stores and forwards messages to Aries  agents that (for example) lack an addressable endpoint on the Internet such as a mobile wallet. A live instance of a public mediator based on ACA-Py is available [here](https://indicio-tech.github.io/mediator/) from Indicio Technologies. Learn more about deploying a mediator [here](./Mediation.md). See the [Aries Mediator Service](https://github.com/hyperledger/aries-mediator-service) for a "best practices" configuration of an Aries mediator.
-
-### Indy Transaction Endorsing
-
-ACA-Py supports a Transaction Endorsement protocol, for agents that don't have write access to an Indy ledger.  Endorser support is documented [here](Endorser.md).
-
-### Scaled Deployments
-
-ACA-Py supports deployments in scaled environments such as in Kubernetes environments where ACA-Py and its storage components can be horizontally scaled as needed to handle the load.
-
+## Introduccion
+El uso de tecnología blockchain ofrece un enfoque descentralizado y seguro para proteger la integridad y privacidad de los datos. En el entorno escolar, la aplicación de blockchain puede ser especialmente relevante para garantizar la autenticidad de los registros académicos, la protección de la privacidad de los estudiantes y la reducción de fraudes en la emisión de certificados y calificaciones. Este trabajo se centra en explorar cómo blockchain puede ser implementado en las escuelas para fortalecer la seguridad de los datos de estudiantes y proporcionar un sistema de almacenamiento descentralizado y de verificación confiable. Asimismo, se busca desarrollar una prueba de concepto que permita confirmar la factibilidad de una implementación con estas características. Por último, este trabajo intentará evaluar la seguridad, privacidad y habilidad para prevenir fraudes mediante la verificación manual de credenciales, la revisión de la configuración de privacidad de la plataforma seleccionada y pruebas de acceso no autorizado.
 ## Example Uses
 
 The business logic you use with ACA-Py is limited only by your imagination. Possible applications include:
