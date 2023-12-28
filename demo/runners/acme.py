@@ -4,6 +4,11 @@ import logging
 import os
 import sys
 from aiohttp import ClientError
+import random
+
+from datetime import date
+from uuid import uuid4
+# Done step 1
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))  # noqa
 
@@ -25,6 +30,8 @@ from runners.support.utils import (  # noqa:E402
 CRED_PREVIEW_TYPE = "https://didcomm.org/issue-credential/2.0/credential-preview"
 SELF_ATTESTED = os.getenv("SELF_ATTESTED")
 TAILS_FILE_COUNT = int(os.getenv("TAILS_FILE_COUNT", 100))
+
+# Done Step 2
 
 logging.basicConfig(level=logging.WARNING)
 LOGGER = logging.getLogger(__name__)
@@ -170,7 +177,42 @@ async def main(args):
 
             elif option == "2":
                 log_status("#20 Request proof of degree from alice")
-                # TODO presentation requests
+                
+                req_attrs = [
+                    {
+                        "name": "name",
+                        "restrictions": [{"schema_name": "degree schema"}]
+                    },
+                    {
+                        "name": "date",
+                        "restrictions": [{"schema_name": "degree schema"}]
+                    },
+                    {
+                        "name": "degree",
+                        "restrictions": [{"schema_name": "degree schema"}]
+                    }
+                ]
+                req_preds = []
+                indy_proof_request = {
+                    "name": "Proof of Education",
+                    "version": "1.0",
+                    "nonce": str(uuid4().int),
+                    "requested_attributes": {
+                        f"0_{req_attr['name']}_uuid": req_attr
+                        for req_attr in req_attrs
+                    },
+                    "requested_predicates": {}
+                }
+                proof_request_web_request = {
+                    "connection_id": agent.connection_id,
+                    "presentation_request": {"indy": indy_proof_request},
+                }
+                # this sends the request to our agent, which forwards it to Alice
+                # (based on the connection_id)
+                await agent.admin_POST(
+                    "/present-proof-2.0/send-request",
+                    proof_request_web_request
+                )
 
             elif option == "3":
                 msg = await prompt("Enter message: ")
