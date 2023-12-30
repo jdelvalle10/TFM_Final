@@ -207,7 +207,7 @@ async def main(args):
                 revocation_registry_size=TAILS_FILE_COUNT,
             )
             
-        # generate an invitation for Alice
+        # generate an invitation for X
         await acme_agent.generate_invitation(display_qr=True, wait=True)
 
         options = (
@@ -230,7 +230,7 @@ async def main(args):
                     "employee_id": "ACME0009",
                     "name": "Jose Del Valle",
                     "date": date.isoformat(date.today()),
-                    "position": "CEO"
+                    "position": "Supervisor"
                 }
                 cred_preview = {
                     "@type": CRED_PREVIEW_TYPE,
@@ -250,7 +250,7 @@ async def main(args):
                 )
 
             elif option == "2":
-                log_status("#20 Request proof of degree from alice")
+                log_status("#20 Request proof of degree from X")
                 
                 req_attrs = [
                     {
@@ -281,7 +281,7 @@ async def main(args):
                     "connection_id": agent.connection_id,
                     "presentation_request": {"indy": indy_proof_request},
                 }
-                # this sends the request to our agent, which forwards it to Alice
+                # this sends the request to our agent, which forwards it to X
                 # (based on the connection_id)
                 await agent.admin_POST(
                     "/present-proof-2.0/send-request",
