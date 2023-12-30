@@ -228,7 +228,7 @@ async def main(args):
                 log_status("#13 Issue credential offer to X")
                 agent.cred_attrs[cred_def_id] = {
                     "employee_id": "ACME0009",
-                    "name": "Alice Smith",
+                    "name": "Jose Del Valle",
                     "date": date.isoformat(date.today()),
                     "position": "CEO"
                 }
