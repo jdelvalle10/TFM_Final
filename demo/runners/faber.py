@@ -438,7 +438,7 @@ async def main(args):
         else:
             raise Exception("Invalid credential type:" + faber_agent.cred_type)
 
-        # generate an invitation for Alice
+        # generate an invitation for Titular
         await faber_agent.generate_invitation(
             display_qr=True, reuse_connections=faber_agent.reuse_connections, wait=True
         )
@@ -562,7 +562,7 @@ async def main(args):
                     raise Exception(f"Error invalid AIP level: {faber_agent.aip}")
 
             elif option == "2":
-                log_status("#20 Request proof of degree from alice")
+                log_status("#20 Request proof of degree from Titular")
                 if faber_agent.aip == 10:
                     proof_request_web_request = (
                         faber_agent.agent.generate_proof_request_web_request(
@@ -611,7 +611,7 @@ async def main(args):
                     raise Exception(f"Error invalid AIP level: {faber_agent.aip}")
 
             elif option == "2a":
-                log_status("#20 Request * Connectionless * proof of degree from alice")
+                log_status("#20 Request * Connectionless * proof of degree from Titular")
                 if faber_agent.aip == 10:
                     proof_request_web_request = (
                         faber_agent.agent.generate_proof_request_web_request(
