@@ -45,7 +45,7 @@ class AliceAgent(AriesAgent):
             ident,
             http_port,
             admin_port,
-            prefix="Alice",
+            prefix="Titular",
             no_auto=no_auto,
             seed=None,
             aip=aip,
@@ -143,7 +143,7 @@ async def main(args):
 
         await alice_agent.initialize(the_agent=agent)
 
-        log_status("#9 Input faber.py invitation details")
+        log_status("#9 Input Emisor's invitation details")
         await input_invitation(alice_agent)
 
         options = "    (3) Send Message\n" "    (4) Input New Invitation\n"
@@ -234,7 +234,7 @@ if __name__ == "__main__":
             import pydevd_pycharm
 
             print(
-                "Alice remote debugging to "
+                "Titular remote debugging to "
                 f"{PYDEVD_PYCHARM_HOST}:{PYDEVD_PYCHARM_CONTROLLER_PORT}"
             )
             pydevd_pycharm.settrace(
