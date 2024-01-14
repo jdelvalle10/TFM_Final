@@ -37,4 +37,4 @@ LEDGER_URL=http://dev.greenlight.bcovrin.vonx.io ./run_demo acme
 7. En el agente Verificador, cree una nueva invitacion. Copie esta invitacion en el agente titular para crear una nueva conexion.
 8. En el agente verificador, seleccione la opcion de solicitar una prueba de educacion. El Titular aceptara la solicitud de verificacipon se aceptara automaticamente.
 9. El agente Verificador validara la credencial y aceptara como valida la credencial educativa del Titular.
-* Start another terminal session and run the same commands as for "Alice", but replace "alice" with "acme".
+
