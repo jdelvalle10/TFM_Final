@@ -50,7 +50,7 @@ class AcmeAgent(AriesAgent):
             ident,
             http_port,
             admin_port,
-            prefix="Acme",
+            prefix="Verificador",
             no_auto=no_auto,
             **kwargs,
         )
@@ -225,9 +225,9 @@ async def main(args):
                 break
 
             elif option == "1":
-                log_status("#13 Issue credential offer to X")
+                log_status("#13 Issue credential offer to Titular")
                 agent.cred_attrs[cred_def_id] = {
-                    "employee_id": "ACME0009",
+                    "employee_id": "EmpresaXYZ001",
                     "name": "Jose Del Valle",
                     "date": date.isoformat(date.today()),
                     "position": "Supervisor"
@@ -250,7 +250,7 @@ async def main(args):
                 )
 
             elif option == "2":
-                log_status("#20 Request proof of degree from X")
+                log_status("#20 Request proof of degree from Titular")
                 
                 req_attrs = [
                     {
@@ -328,7 +328,7 @@ if __name__ == "__main__":
             import pydevd_pycharm
 
             print(
-                "Acme remote debugging to "
+                "Verificador remote debugging to "
                 f"{PYDEVD_PYCHARM_HOST}:{PYDEVD_PYCHARM_CONTROLLER_PORT}"
             )
             pydevd_pycharm.settrace(
