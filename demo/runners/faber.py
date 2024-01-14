@@ -56,7 +56,7 @@ class FaberAgent(AriesAgent):
             ident,
             http_port,
             admin_port,
-            prefix="Faber",
+            prefix="Emisor",
             no_auto=no_auto,
             endorser_role=endorser_role,
             revocation=revocation,
@@ -522,7 +522,7 @@ async def main(args):
                 )
 
             elif option == "1":
-                log_status("#13 Issue credential offer to X")
+                log_status("#13 Issue credential offer to Titular")
 
                 if faber_agent.aip == 10:
                     offer_request = faber_agent.agent.generate_credential_offer(
@@ -703,7 +703,7 @@ async def main(args):
             elif option == "4":
                 log_msg(
                     "Creating a new invitation, please receive "
-                    "and accept this invitation using Alice agent"
+                    "and accept this invitation using Titular agent"
                 )
                 await faber_agent.generate_invitation(
                     display_qr=True,
@@ -826,7 +826,7 @@ if __name__ == "__main__":
             import pydevd_pycharm
 
             print(
-                "Faber remote debugging to "
+                "Emisor remote debugging to "
                 f"{PYDEVD_PYCHARM_HOST}:{PYDEVD_PYCHARM_CONTROLLER_PORT}"
             )
             pydevd_pycharm.settrace(
