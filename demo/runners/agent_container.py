@@ -601,7 +601,7 @@ class AriesAgent(DemoAgent):
         with log_timer("Generate invitation duration:"):
             # Generate an invitation
             log_status(
-                "#7 Create a connection to alice and print out the invite details"
+                "#7 Create a connection to Titular and print out the invite details"
             )
             invi_rec = await self.get_invite(
                 use_did_exchange,
@@ -986,7 +986,7 @@ class AgentContainer:
         return matched
 
     async def request_proof(self, proof_request, explicit_revoc_required: bool = False):
-        log_status("#20 Request proof of degree from alice")
+        log_status("#20 Request proof of degree from Titular")
 
         if self.cred_type in [
             CRED_FORMAT_INDY,
