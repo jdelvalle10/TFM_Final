@@ -165,7 +165,7 @@ async def main(args):
             )
         )
         agent = AcmeAgent(
-            "acme.agent",
+            "Agente Verificador",
             acme_agent.start_port,
             acme_agent.start_port + 1,
             genesis_data=acme_agent.genesis_txns,
