@@ -393,7 +393,7 @@ async def main(args):
             )
         )
         agent = FaberAgent(
-            "faber.agent",
+            "emisor.agent",
             faber_agent.start_port,
             faber_agent.start_port + 1,
             genesis_data=faber_agent.genesis_txns,
