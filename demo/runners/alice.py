@@ -122,7 +122,7 @@ async def main(args):
             )
         )
         agent = AliceAgent(
-            "alice.agent",
+            "Agente Titular",
             alice_agent.start_port,
             alice_agent.start_port + 1,
             genesis_data=alice_agent.genesis_txns,
